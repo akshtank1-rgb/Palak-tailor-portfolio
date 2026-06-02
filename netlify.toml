@@ -1,0 +1,18 @@
+# Netlify configuration for Palak Tailor Portfolio
+
+[build]
+  publish = "."
+
+# Enable Netlify Identity for CMS login
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+
+# Redirects
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
