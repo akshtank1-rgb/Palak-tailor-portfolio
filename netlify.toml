@@ -1,6 +1,7 @@
 # Netlify configuration for Palak Tailor Portfolio
 
 [build]
+  command = ""
   publish = "."
 
 # Enable Netlify Identity for CMS login
