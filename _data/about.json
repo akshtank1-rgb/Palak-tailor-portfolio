@@ -1,1 +1,7 @@
-something 
+{
+  "quote": "Every design I create is a story — woven in henna, worn with pride, remembered forever.",
+  "para1": "I'm Palak Tailor, a dedicated Mehndi artist based in Jaipur with over 7 years of experience crafting intricate henna designs for brides, festivals, and every occasion in between.",
+  "para2": "From delicate bridal designs to bold Arabic patterns and playful party mehndi, I bring artistry and care to every stroke. My henna is always 100% natural — safe, fragrant, and rich in colour.",
+  "para3": "My goal is simple: to make every client feel like the most beautiful version of themselves on their special day.",
+  "skills": ["Bridal Mehndi", "Arabic Patterns", "Rajasthani Style", "Indo-Western", "Mandala Art", "Party Mehndi", "Natural Henna Only", "Home Visits"]
+}
