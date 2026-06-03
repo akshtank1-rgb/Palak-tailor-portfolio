@@ -1,0 +1,106 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "/images/gallery"
+
+collections:
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+
+      - name: "general"
+        label: "General Info"
+        file: "_data/general.json"
+        fields:
+          - { label: "Artist Name",      name: "name",       widget: "string",  default: "Palak Tailor" }
+          - { label: "Tagline",          name: "tagline",    widget: "string",  default: "Art That Blooms on Your Skin" }
+          - { label: "Sub-heading",      name: "subheading", widget: "text",    default: "Intricate henna designs crafted with love." }
+          - { label: "City",             name: "city",       widget: "string",  default: "Jaipur, Rajasthan" }
+          - { label: "WhatsApp Number",  name: "whatsapp",   widget: "string",  default: "917742733848" }
+          - { label: "Instagram Handle", name: "instagram",  widget: "string",  default: "palak_mehendi_jaipur_" }
+          - { label: "Years Experience", name: "years",      widget: "number",  default: 7 }
+          - { label: "Happy Clients",    name: "clients",    widget: "string",  default: "500+" }
+          - { label: "Design Styles",    name: "styles",     widget: "string",  default: "30+" }
+
+      - name: "about"
+        label: "About Me"
+        file: "_data/about.json"
+        fields:
+          - { label: "Quote",       name: "quote", widget: "text" }
+          - { label: "Paragraph 1", name: "para1", widget: "text" }
+          - { label: "Paragraph 2", name: "para2", widget: "text" }
+          - { label: "Paragraph 3", name: "para3", widget: "text" }
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            field: { label: "Skill", name: "skill", widget: "string" }
+
+      - name: "theme"
+        label: "Website Theme"
+        file: "_data/theme.json"
+        fields:
+          - label: "Color Scheme"
+            name: "scheme"
+            widget: "select"
+            options:
+              - { label: "Rose and Cream (Default)", value: "rose" }
+              - { label: "Midnight Gold (Dark)",     value: "dark" }
+              - { label: "Sage and Ivory (Green)",   value: "sage" }
+              - { label: "Plum and Blush (Purple)",  value: "plum" }
+          - { label: "Primary Color", name: "primary", widget: "color", default: "#c2725a" }
+          - { label: "Accent Color",  name: "accent",  widget: "color", default: "#c9974a" }
+          - { label: "Background",    name: "bg",      widget: "color", default: "#fdf7f2" }
+
+  - name: "gallery"
+    label: "Gallery"
+    folder: "_data/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title",    name: "title",    widget: "string" }
+      - { label: "Image",    name: "image",    widget: "image" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - Bridal
+          - Arabic
+          - Rajasthani
+          - Mandala
+          - Party and Festival
+          - Indo-Western
+      - { label: "Description", name: "desc",     widget: "text",    required: false }
+      - { label: "Featured",    name: "featured", widget: "boolean", default: false }
+      - { label: "Date",        name: "date",     widget: "date" }
+
+  - name: "services"
+    label: "Services"
+    folder: "_data/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Service Name",   name: "title",    widget: "string" }
+      - { label: "Icon (emoji)",   name: "icon",     widget: "string" }
+      - { label: "Description",    name: "desc",     widget: "text" }
+      - { label: "Starting Price", name: "price",    widget: "string" }
+      - { label: "Duration",       name: "duration", widget: "string" }
+      - { label: "Active",         name: "active",   widget: "boolean", default: true }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "_data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name",  name: "name",   widget: "string" }
+      - { label: "Role / Event", name: "role",   widget: "string" }
+      - { label: "Review",       name: "review", widget: "text" }
+      - label: "Stars"
+        name: "stars"
+        widget: "select"
+        options: ["5", "4", "3"]
+        default: "5"
+      - { label: "City", name: "city", widget: "string", default: "Jaipur" }
